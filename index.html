@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+        <title>Learning Leaflet</title>
+
+        <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+        <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+
+        <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+        <link rel='stylesheet' href='./css/maps.css' />
+        <link rel='stylesheet' href='./css/grid.css' />
+        <link rel='stylesheet' href='./css/button.css' />
+        <link rel='stylesheet' href='./css/input.css' />
+    </head>
+    <body>
+        <div class='row'>
+            <div class='col-12'>
+                <div id='map'></div>
+            </div>
+        </div>
+
+        <div class='row' style='margin-left: auto; margin-right: auto;'>
+            <div class='col-10'>
+                <input id='address' type='text' class='input input-fit' placeholder='address'></input>
+            </div>
+            <div class='col-2'>
+                <button id='find' class='button button-fit' onclick='getAddress()'>Find</button>
+            </div>
+        </div>
+
+        <script src="./config.js"></script>
+        <script src="./js/maps.js"></script>
+    </body>
+</html>

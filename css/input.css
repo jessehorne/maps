@@ -1,0 +1,27 @@
+.input {
+    height: 30px;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: #555;
+    margin: 13px 0px 13px 0px;
+    border-radius: 5px;
+    border: solid 1px #ddd;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.input-small {
+    width: 40px;
+}
+
+.input-med {
+    width: 140px;
+}
+
+.input-large {
+    width: 290px;
+}
+
+.input-fit {
+    width: 100%;
+}

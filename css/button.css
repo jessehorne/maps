@@ -1,0 +1,85 @@
+.button {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    min-width: 20px;
+    background:linear-gradient(-45deg, #6CC3B3 0%, #7DD4C4 100%);
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin: 15px 0px 15px 0px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+
+.button.red {
+    background: #BF4240;
+    /*background:linear-gradient(180deg, #9D3130 0%, #C85B5B 100%);*/
+    background:linear-gradient(180deg, #C85B5B 0%, #9D3130 100%);
+}
+
+.button.yellow {
+    background: #C7C357;
+    background:linear-gradient(180deg, #CDCC6A 0%, #A4A355 100%);
+}
+
+.button.green {
+    background: #7DBB3E;
+    background:linear-gradient(180deg, #8FD071 0%, #72A65A 100%);
+}
+
+.button.blue {
+    background: #335799;
+    background:linear-gradient(180deg, #3D76B8 0%, #315E93 100%);
+}
+
+.button.purple {
+    background: #AC3CB4;
+    background:linear-gradient(180deg, #C675D1 0%, #9E5EA7 100%);
+}
+
+.button.brown {
+    background: #BB7B3E;
+    background:linear-gradient(180deg, #99591C 0%, #966232 100%);
+}
+
+.button.black {
+    background: #000000;
+    background:linear-gradient(180deg, #000 0%, #333 100%);
+}
+
+.button.grey {
+    background: #ccc;
+    background:linear-gradient(180deg, #aaa 0%, #ccc 100%);
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.button:active {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ddd;
+    opacity: 1;
+}
+
+.button-small {
+    width: 50px;
+}
+
+.button-med {
+    width: 150px;
+}
+
+.button-large {
+    width: 300px;
+}
+
+.button-fit {
+    width: 100%;
+}

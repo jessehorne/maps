@@ -1,0 +1,71 @@
+.body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.row {
+    display: inline;
+    width: 100%;
+    min-height: 1px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+[class*='col-'] {
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 0.75%;
+    margin-right: 0.75%;
+}
+
+.col-1 {
+    width: 6.83%;
+}
+
+.col-2 {
+    width: 15.16%;
+}
+
+.col-3, col-fourth {
+    width: 23.5%;
+}
+
+.col-4, col-third {
+    width: 31.83%;
+}
+
+.col-5 {
+    width: 40.16%;
+}
+
+.col-6, col-half {
+    width: 48.5%;
+}
+.col-7 {
+    width: 56.83%;
+}
+
+.col-8, col-two-thirds {
+    width: 65.16%;
+}
+
+.col-9, col-three-fourths {
+    width: 73.5%;
+}
+
+.col-10 {
+    width: 81.83%;
+}
+
+.col-11 {
+    width: 90.16%;
+}
+
+.col-12, col-full {
+    width: 98.5%;
+}
