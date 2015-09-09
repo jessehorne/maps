@@ -2,6 +2,8 @@
 
     L.mapbox.accessToken = config.key;
 
+    $('#map').height($(window).height() * .8);
+
     var map = L.mapbox.map('map', 'mapbox.streets')
         .setView([33.923014, -84.406099], 9);
 
