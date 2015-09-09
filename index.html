@@ -16,18 +16,22 @@
         <link rel='stylesheet' href='./css/input.css' />
     </head>
     <body>
-        <div class='row'>
-            <div class='col-12'>
-                <div id='map'></div>
-            </div>
-        </div>
-
         <div class='row' style='margin-left: auto; margin-right: auto;'>
             <div class='col-10'>
                 <input id='address' type='text' class='input input-fit' placeholder='address'></input>
             </div>
-            <div class='col-2'>
+            <div class='col-1'>
                 <button id='find' class='button button-fit' onclick='getAddress()'>Find</button>
+            </div>
+
+            <a href='https://github.com/jessehorne/maps' style='position: absolute; top: 10px; right: 10px;'>
+                <img src='./images/github.png' alt='Fork'>
+            </a>
+        </div>
+
+        <div class='row'>
+            <div class='col-12'>
+                <div id='map'></div>
             </div>
         </div>
 
