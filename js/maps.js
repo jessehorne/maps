@@ -17,6 +17,13 @@
                     address.value = "Couldn't find";
                 }
             });
+        } else {
+            // Find anywhere
+            var plusOrMinus = Math.random() < 0.5 ? 1 : -1;
+            var lon = plusOrMinus * Math.floor(Math.random() * 90 + 1);
+            var lat = plusOrMinus * Math.floor(Math.random() * 90 + 1);
+            console.log(lon, lat);
+            map.setView([lon, lat], 4);
         }
     }
 
