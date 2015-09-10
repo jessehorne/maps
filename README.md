@@ -17,7 +17,7 @@ How do I run it locally?
 How do I contribute?
 --------------------
 1. Fork this repository
-2. Check out the current unsolved issues
+2. Check out the current unresolved issues and/or create an issue
 3. Once you're ready, submit a pull request
 4. Don't be scared to join ##jesseh on Freenode
 5. Profit!!!
