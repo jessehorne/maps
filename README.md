@@ -1,4 +1,4 @@
-Maps at maps.breh.xyz
+[Maps](http://maps.breh.xyz)
 =====================
 
 ![Map Screenshot](/screenshot.png)
