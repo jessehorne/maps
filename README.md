@@ -1,6 +1,8 @@
 Maps at maps.breh.xyz
 =====================
 
+![Map Screenshot](/screenshot.png)
+
 What is it?
 -----------
 Maps is a mapping application similar to Google Maps. It uses Mapbox and Leaflet.
