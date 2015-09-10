@@ -1,5 +1,17 @@
 (function() {
 
+    // generate random ip
+    function generateIP() {
+        // generate ip
+        var ip = [];
+        for (var i = 1; i <= 4; i++) {
+            var num = Math.floor(Math.random() * 255 + 1);
+            ip.push(num);
+        }
+        ip = ip.join('.');
+        return ip;
+    }
+
     // Called when user presses Find or the enter key
     function changePosition() {
         if (address.value != "") {
@@ -18,12 +30,26 @@
                 }
             });
         } else {
-            // Find anywhere
-            var plusOrMinus = Math.random() < 0.5 ? 1 : -1;
-            var lon = plusOrMinus * Math.floor(Math.random() * 180 + 1);
-            var lat = plusOrMinus * Math.floor(Math.random() * 180 + 1);
-            console.log(lon, lat);
-            map.setView([lon, lat], 7);
+            var user_ip;
+            var user_location;
+            $.getJSON('http://ip-api.com/json/' +
+                generateIP(),
+                function(data) {
+                    user_ip = data;
+                    if (data.city) {
+                        user_location = data.city + ", " + data.regionName;
+                    } else {
+                        user_location = data.regionName;
+                    }
+
+                    if (user_location) {
+                        address.value = user_location;
+                        changePosition();
+                        address.placeholder = user_location;
+                        address.value = "";
+                    }
+                }
+            );
         }
     }
 
@@ -60,9 +86,16 @@
         'https://api.mapbox.com/v4/geocode/mapbox.places/ADDRESS.json?access_token=TOKEN';
 
     // Get location of user
+    var user_ip;
     var user_location;
-    $.getJSON('http://ipinfo.io/', function(data) {
-        user_location = data.city + ", " + data.region;
+
+    $.getJSON('https://freegeoip.net/json/', function(data) {
+        user_ip = data;
+        if (data.city) {
+            user_location = data.city + ", " + data.region_name;
+        } else {
+            user_location = data.region_name;
+        }
 
         if (user_location) {
             address.value = user_location;
