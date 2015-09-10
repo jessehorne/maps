@@ -71,6 +71,15 @@
 
     map.attributionControl.setPosition('bottomleft');
 
+    var control = L.mapbox.geocoderControl(
+        'mapbox.places', {
+            autocomplete: true,
+            keepOpen: false
+        }).on('select', function(e) {
+        address.value = control._results.textContent;
+    });
+    map.addControl(control);
+
     map.on('click', function(e) {
         /*
                marker = L.marker(e.latlng).addTo(map);
