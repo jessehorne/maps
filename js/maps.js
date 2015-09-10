@@ -4,7 +4,7 @@
     function changePosition() {
         if (address.value != "") {
             var newAddress = address.value.split(' ').join('+');
-            var apiURL = apiCall.replace('ADDRESS', newAddress).replace(
+            var apiURL = geocode.replace('ADDRESS', newAddress).replace(
                 'TOKEN', config.key);
             var json = "";
             $.getJSON(apiURL, function(data) {
@@ -32,13 +32,31 @@
 
     $('#map').height($(window).height() - $('#map').position().top - 10);
 
+    var directionsWidth = $('#directions').width();
+    $('#map').width($('#map').width() - directionsWidth - 10);
+    $('#address').width($('#map').width() - $('img').width() - 10);
+    $('#github').css({
+        top: $('#address').offset().top,
+        left: $('#address').width() + 25
+    });
+
     var map = L.mapbox.map('map', 'mapbox.streets')
-        .setView([0.0, 0.0], 10);;
+        .setView([0.0, 0.0], 10);
+
+    map.attributionControl.setPosition('bottomleft');
+
+    map.on('click', function(e) {
+        /*
+               marker = L.marker(e.latlng).addTo(map);
+               marker.on('click', function(e) {
+                   map.removeLayer(marker);
+               }); */
+    });
 
     var address = document.getElementById('address');
     var button = document.getElementById('find');
 
-    var apiCall =
+    var geocode =
         'https://api.mapbox.com/v4/geocode/mapbox.places/ADDRESS.json?access_token=TOKEN';
 
     // Get location of user
@@ -52,13 +70,32 @@
         }
     });
 
-    button.onclick = function() {
-        changePosition();
-    }
-
     $('#address').keyup(function(event) {
         if (event.keyCode == 13) {
             changePosition();
         }
     });
+
+    // directions
+    var directions = L.mapbox.directions();
+    $('#inputs').css({
+        top: $('#map').offset().top + 10,
+        left: $('#map').width() - $('#inputs').width() - 10
+    });
+
+    var directionsLayer = L.mapbox.directions.layer(directions)
+        .addTo(map);
+
+    var directionsInputControl = L.mapbox.directions.inputControl(
+            'inputs', directions)
+        .addTo(map);
+    var directionsErrorsControl = L.mapbox.directions.errorsControl(
+            'errors', directions)
+        .addTo(map);
+    var directionsRoutesControl = L.mapbox.directions.routesControl(
+            'routes', directions)
+        .addTo(map);
+    var directionsInstructionsControl = L.mapbox.directions.instructionsControl(
+        'instructions',
+        directions).addTo(map);
 })();
