@@ -67,6 +67,8 @@
         if (user_location) {
             address.value = user_location;
             changePosition();
+            address.placeholder = user_location;
+            address.value = "";
         }
     });
 
